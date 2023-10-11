@@ -1,0 +1,136 @@
+header, body{
+  font-family: PlusJakartaSans,sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+}
+
+main{
+  padding: 0;
+  margin: 0;
+}
+
+h3{
+  font-weight: 200;
+}
+
+h2{
+  font-size: 48px;
+  display: inline;
+}
+
+.logo{
+  padding-left: 5rem;
+  width:35px;
+  height: 35px;
+  margin: 10px;
+}
+
+.search-bar{
+  border-radius: 20px;
+  border: 1px solid gray;
+  height: 35px;
+  width: 400px;
+  color: gray;
+  opacity: 0.8;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+.login{
+  margin-right: 10px;
+}
+
+.logo, .login, .body-container button:hover{
+  cursor: pointer;
+}
+
+.container-header-right{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 50px;
+
+}
+
+.body-bg1{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 500px;
+}
+
+.blank-space{
+  width: 100%;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container{
+  margin: 0 5rem;
+
+}
+
+.body-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.body-container article{
+  display: inline;
+  flex: 1;
+}
+
+.body-container article a{
+  color: #CF4469;
+  font-weight: bold;
+}
+
+.body-container button{
+  height: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  min-height: 2rem;
+  color: white;
+  background-color: #CF4469;
+  border: none;
+  border-radius: 15px;
+}
+
+.flex-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.flexbox{
+  width: 22%;
+  margin-bottom: 5rem;
+}
+
+.flex-image{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.flex-text-container{
+  margin-top: 5px;
+}
+
+.event-detail{
+  color: rgb(102, 99, 99);
+}
