@@ -9,7 +9,7 @@ body {
   margin: 0;
 }
 .wrapper {
-    margin: 10px 500px;
+    margin: 10px auto;
     width: 400px;
     background-color: black;
     border-radius: 10px;
