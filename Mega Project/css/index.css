@@ -333,3 +333,163 @@ footer{
   display: inline;
   margin: 10px;
 }
+
+@media only screen and (max-width: 450px){
+  header{
+    margin-right: 2rem;
+    justify-content: space-around;
+  }
+  .logo{
+    margin-left: 0;
+    padding-left: 10px;
+  }
+  .search-bar{
+    display: none;
+  }
+  .container-header-right h5{
+    display: none;
+  }
+
+  .body-bg1{
+    width: 100%;
+    height: 350px;
+  }
+
+  .blank-space{
+    height: 50px;
+  }
+
+  .main-container{
+    margin: 0 2rem;
+  }
+
+  .body-container{
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .body-container article h5{
+    margin: 10px 0;
+  }
+
+  .body-container button{
+    margin-top: 10px;
+  }
+
+  .flex-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  
+  .flexbox{
+    width: 47%;
+    margin-bottom: 4rem;
+  }
+  
+  .flex-image{
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .flex-text-container{
+    margin-top: 5px;
+    font-size: small;
+  }
+  
+  .event-detail{
+    color: rgba(61, 61, 61, 1);
+  }
+
+  h3{
+    font-size: 25px;
+  }
+
+  .blackout{
+    width: 100%;
+    height: 558px;
+    background: rgba(16, 16, 16, 1);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  
+  .blackout-textarea{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0rem;
+  }
+  
+  .blackout-textarea, .blackout-imgarea{
+    width: 100%;
+  }
+  
+  .discover-button{
+    margin: 0 auto;
+  }
+
+  .blackout-imgarea{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-between;
+    align-items: space-between;
+    justify-content: space-between;
+  }
+
+  .blackout-flex{
+    width: 100%;
+    background-color: black;
+    margin: 0 auto;
+    align-content: space-between;
+    align-items: space-between;
+    justify-content: space-between;
+    
+  }
+  
+  .blackout-imgarea img{
+    width: 188px;
+    height: 125px;
+  }
+  
+  
+  .blackout-flex h4{
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .ladki-box{
+    height: 200px;
+    width: 100%;
+  }
+  
+  .ladki{
+    width: 100%;
+    height: 518.06px;
+  }
+  .ladki img{
+    border-radius: 6.91px;
+    margin-right: 5rem;
+  }
+  
+  .hostbox{
+    width: 100%;
+    height: 210px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.12);
+  }
+  
+  .hostbox h2{
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .hostbox button{
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+  
+}
