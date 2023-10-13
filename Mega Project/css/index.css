@@ -113,7 +113,8 @@ footer{
 
 .main-container{
   margin: 0 5rem;
-
+  justify-content: center;
+  align-items: center;
 }
 
 .body-container{
@@ -181,7 +182,8 @@ footer{
 .load-button{
   display:flex; 
   align-items: center;
-  margin-left: 48.7rem;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .blackout{
@@ -246,7 +248,7 @@ footer{
 .ladki img{
   border-radius: 6.91px;
   float: right;
-  margin-right: 7rem;
+  margin-right: 5rem;
 }
 
 .hostbox{
@@ -316,18 +318,18 @@ footer{
 }
 
 .footer-footer-text1{
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
 }
 
 .footer-footer-text2{
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-flow: row wrap;
 }
 
 .footer-textbox{
   display: inline;
-  margin: 15px;
+  margin: 10px;
 }
