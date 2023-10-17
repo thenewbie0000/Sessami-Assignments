@@ -232,20 +232,20 @@ footer{
   color: rgba(255, 255, 255, 1);
 }
 
-.ladki-box{
+.girl-box{
   height: 518.06px;
   width: 100%;
   display: flex;
 }
 
-.ladki{
+.girl{
   width: 80%;
   height: 518.06px;
   position: absolute;
   z-index: 1;
   right: 0;
 }
-.ladki img{
+.girl img{
   border-radius: 6.91px;
   float: right;
   margin-right: 5rem;
@@ -459,16 +459,17 @@ footer{
     color: rgba(255, 255, 255, 1);
   }
 
-  .ladki-box{
+  .girl-box{
     height: 200px;
     width: 100%;
+    top:500px;
   }
   
-  .ladki{
+  .girl{
     width: 100%;
     height: 518.06px;
   }
-  .ladki img{
+  .girl img{
     border-radius: 6.91px;
     margin-right: 5rem;
   }
@@ -511,6 +512,11 @@ footer{
     width: 100%;
     margin-bottom: 4rem;
   } 
+
+  .girl-box{
+    
+    top:500px;
+  }
   
   .hostbox{
     width: 50%;
