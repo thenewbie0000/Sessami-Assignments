@@ -1,0 +1,23 @@
+footer{
+  padding: 2vh;
+  background: rgba(245, 245, 245, 1);
+
+}
+.footer-footer-text1, .footer-footer-text2{
+  display: flex;
+  flex-flow: row wrap;
+
+}
+.footer-textbox{
+  width: 40%;
+  margin-bottom: 2vh;
+}
+
+.column-container{
+  display: flex;
+  flex-flow: row wrap;
+}
+.column{
+  width: 30%;
+  margin: 5vh;
+}

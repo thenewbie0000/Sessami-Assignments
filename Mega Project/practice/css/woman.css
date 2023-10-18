@@ -1,0 +1,15 @@
+.girl-box{
+  margin: 10vh 5vh;
+}
+.girl{
+  width: 90%;
+}
+
+.hostbox{
+  margin-top: 5vh;
+  box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.12);
+  width: 40vh;
+  border-radius: 15px;
+  padding: 10px;
+  line-height: 120%;
+}
