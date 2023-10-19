@@ -3,21 +3,29 @@ footer{
   background: rgba(245, 245, 245, 1);
 
 }
-.footer-footer-text1, .footer-footer-text2{
+.footer-footer-text1{
   display: flex;
   flex-flow: row wrap;
-
+  margin-bottom: 2vh;
 }
-.footer-textbox{
+.footer-footer-text2{
+  
+  display: flex;
+  flex-flow: row wrap;
+}
+.footer-textbox1{
   width: 40%;
   margin-bottom: 2vh;
 }
-
+.footer-textbox2{
+  width: 40%;
+  margin-bottom: 1vh;
+}
 .column-container{
   display: flex;
   flex-flow: row wrap;
 }
 .column{
   width: 30%;
-  margin: 5vh;
+  margin: 2vh 5vh;
 }

@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   padding: 5px 15px;
-  width: 100%;
 }
 .black-text{
   margin-top: 5vh;
@@ -26,6 +25,7 @@
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2vh;
 }
 .blackout-flex img{
   width: 30vh;
