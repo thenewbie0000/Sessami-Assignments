@@ -1,0 +1,81 @@
+@media screen and (min-width:1000px){
+  .container-header-right{
+    padding-right: 0;
+    width: 15%;
+  }
+  .search-bar{
+    padding: 1.5vh 14vw 1.5vh 2vw;
+  }
+  .logo{
+    max-height:6vh;
+  }
+  .flexbox{
+    width: 22%;
+  }
+  .main-container h3{
+    margin-left: 2vw;
+  }
+  .blackbox{
+    flex-flow: row wrap;
+    padding: 0 4vw 4vh 10vw;
+  }
+  .black-text{
+    width: 40%;
+  }
+  .black-text h3{
+    margin-bottom: 2vh;
+  }
+  .black-imgarea {
+    width: 60%;
+  }
+  .black-imgarea{
+    flex-flow: row wrap;
+  }
+  .blackout-flex{
+    width: 45%;
+  }
+  .hostbox{
+    width: 26vw;
+    line-height: 120%;
+    height: fit-content;
+  }
+  .blacklogo{
+    width: 20%;
+    margin-left: 4vw;
+  }
+  .column-container{
+    width: 70%;
+  }
+  .column{
+    line-height: 180%;
+    font-weight: 480;
+  }
+  .column h4{
+    line-height: 250%;
+  }
+  .column-big{
+    width: 20%;
+  }
+  .footer-footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .footer-footer-text1{
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 2vh;
+    width: 60%;
+  }
+  .footer-footer-text2{
+    display: flex;
+    flex-flow: row wrap;
+    width:30% ;
+  }
+  .footer-textbox1{
+    display: inline;
+  }
+  .footer-textbox1-big{
+    width: 25%;
+  }
+}

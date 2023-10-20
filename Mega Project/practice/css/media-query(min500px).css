@@ -18,6 +18,9 @@
     margin:2rem auto;
     justify-content:center;
   }
+  .main-container h3{
+    margin-left: 4vw;
+  }
   .black-imgarea{
     display: flex;
     flex-flow: row wrap;

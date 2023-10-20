@@ -7,8 +7,15 @@
   }
   .text-block{
       backdrop-filter:none;
-      margin-left: 2vw;
-      width: 40%;
+      margin-left: 5vw;
+      padding-top: 15vh;
+      width: 50%;
+  }
+  .text-block p{
+    width: 80%;
+  }
+  .main-container h3{
+    margin-left: 2vw;
   }
   .flexbox{
     width: 30%;
