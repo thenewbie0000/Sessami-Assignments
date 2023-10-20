@@ -34,7 +34,7 @@
   .girl-box{
     margin:4vh auto;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column-reverse wrap;
     justify-content: space-around;
     align-items: center;
   }
