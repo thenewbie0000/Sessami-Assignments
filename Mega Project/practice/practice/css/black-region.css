@@ -1,0 +1,37 @@
+.blackbox{
+  background-color:rgba(16, 16, 16, 1);;
+  margin-top: 10vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+}
+.black-text{
+  margin-top: 5vh;
+}
+.black-text h3{
+  color: rgba(255, 255, 255, 1);
+}
+.black-imgarea{
+  margin-top: 10vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+.blackout-flex{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+.blackout-flex img{
+  width: 30vh;
+  height: 20vh;
+}
+
+.blackout-flex h4{
+  color: rgba(255, 255, 255, 1);
+}

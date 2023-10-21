@@ -1,0 +1,17 @@
+.girl-box{
+  margin: 10vh 2vh;
+  display: flex;
+  flex-flow: column-reverse wrap;
+  justify-content: space-around;
+}
+.girl{
+  width: 100%;
+}
+
+.hostbox{
+  margin-top: 2vh;
+  box-shadow: 0px 4px 100px 0px rgba(0, 0, 0, 0.12);
+  width: 55vh;
+  border-radius: 15px;
+  padding: 2vh 3vw;
+}
