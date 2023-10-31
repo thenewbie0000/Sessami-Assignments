@@ -1,4 +1,31 @@
 @media screen and (min-width:1000px){
+  body{
+    font-family: 'Figtree', sans-serif;
+    font-size: 15px;
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1{
+    font-size: 52px;
+    font-weight: 600;
+  }
+  h2{
+    font-size: 41px;
+    font-weight: 600;
+  }
+  h3{
+    font-size: 33px;
+    font-weight: 600;
+  }
+  h5{
+    font-size: 19px;
+    font-weight: 400;
+  }
+  p{
+    font-size: 17px;
+    font-weight: 400;
+  }
   .container-header-right{
     padding-right: 0;
     width: 15%;
@@ -11,6 +38,9 @@
   }
   .flexbox{
     width: 22%;
+  }
+  .line{
+    border: 0.5px solid rgba(218, 218, 218, 1);
   }
   .main-container h3{
     margin-left: 2vw;
@@ -36,7 +66,7 @@
   }
   .hostbox{
     width: 26vw;
-    line-height: 120%;
+    line-height: 1.1;
     height: fit-content;
   }
   .blacklogo{

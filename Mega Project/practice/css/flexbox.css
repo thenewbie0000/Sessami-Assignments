@@ -22,3 +22,7 @@
   align-items: center;
   justify-content: center;
 }
+
+.line{
+  border: 0.1px solid rgba(218, 218, 218, 1);
+}

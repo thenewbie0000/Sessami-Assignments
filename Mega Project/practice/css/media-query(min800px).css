@@ -20,6 +20,9 @@
   .flexbox{
     width: 30%;
   }
+  .line{
+    border: 0.5px solid rgba(218, 218, 218, 1);
+  }
   .blackout-flex{
     width: 30%;
   }
