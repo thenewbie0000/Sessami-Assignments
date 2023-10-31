@@ -69,6 +69,9 @@
     line-height: 1.1;
     height: fit-content;
   }
+  .girl{
+    width: 75%;
+  }
   .blacklogo{
     width: 20%;
     margin-left: 4vw;
@@ -93,14 +96,14 @@
   }
   .footer-footer-text1{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     margin-bottom: 2vh;
     width: 60%;
   }
   .footer-footer-text2{
     display: flex;
-    flex-flow: row wrap;
-    width:30% ;
+    flex-flow: row nowrap;
+    width:35% ;
   }
   .footer-textbox1{
     display: inline;

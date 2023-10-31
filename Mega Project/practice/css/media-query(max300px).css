@@ -1,0 +1,27 @@
+@media screen and (max-width:350px) {
+  header{
+    height: auto;
+    flex-wrap: nowrap;
+  }
+  .header-text{
+    display: none;
+  }
+  .girl{
+    width: 95%;
+  }
+  .hostbox{
+    width:fit-content;
+  }
+  .hostbox p{
+    font-size: 11px;
+  }
+  .hostbox h3{
+    font-size: 18px;
+  }
+  .host-event-button{
+    min-height: 1.5rem;
+  }
+  .hostbox a{
+    font-size: 11px;
+  }
+}
