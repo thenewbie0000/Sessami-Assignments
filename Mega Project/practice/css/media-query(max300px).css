@@ -1,4 +1,4 @@
-@media screen and (max-width:350px) {
+@media screen and (max-width:360px) {
   header{
     height: auto;
     flex-wrap: nowrap;
@@ -10,7 +10,7 @@
     width: 95%;
   }
   .hostbox{
-    width:fit-content;
+    width:80%;
   }
   .hostbox p{
     font-size: 11px;
