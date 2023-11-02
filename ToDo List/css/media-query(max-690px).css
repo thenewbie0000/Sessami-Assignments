@@ -1,0 +1,13 @@
+@media screen and (max-width:690px) {
+  .main-container{    
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+  }
+  .todo{
+    width: 80%;
+  }
+  input{
+    padding: 1.5vh 2vh;
+  }
+}
