@@ -31,7 +31,8 @@ table tr:nth-child(odd):not(:first-child) {
 }
 th, td{
   padding: 5px 100px;
-}.title-container{
+}
+.title-container{
   padding-bottom: 15px;
 }
 .container {
@@ -47,7 +48,10 @@ th, td{
 .link{
   padding-right: 15px;
 }
-.link:visited, .link:link{  
+.link:link{  
+  color: black;
+}
+.link:visited{  
   color: black;
 }
 .table {
