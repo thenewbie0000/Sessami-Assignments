@@ -1,0 +1,54 @@
+body{
+  background-color: lightgray;
+}
+
+.countdown-timer{
+  font-family: sans-serif;
+  border-radius:60px;
+  background-color: white;
+  display: flex;
+  align-items:center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 30px;
+}
+button{
+  border-radius: 25px;
+  border: none;
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+button:hover{
+  transform: scale(1.2);
+}
+button:active{
+  opacity: 0.8;
+}
+input{
+  border: none;
+  font-size: 35px;
+  width: 58px;
+  box-sizing: border-box;
+
+}
+span{
+  padding: 5px;
+  font-size: 35px;
+}
+.play{
+  background-color: rgb(0, 184, 76);
+}
+.reset{
+  background-color: rgb(130, 8, 230);
+}
+.pause{
+  background-color: rgb(255, 170, 51);
+}
+.unclickable{
+  cursor: not-allowed;
+}
