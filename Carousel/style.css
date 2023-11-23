@@ -1,39 +1,53 @@
-*{
-  padding: 0;
-  margin: 0;
+body {
+  display: grid;
 }
-button{
-  position: absolute;
-  padding: 0 20px;
-  height: 100vh;
-  cursor: pointer;
-  z-index: 50;
-  background: rgba(0, 0, 0, .1);
-  border: none;
+
+.slider {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
 }
-button:hover {
-  background: rgba(0, 0, 0, .4);
-}
-.left-button {
-  left: 0;
-}
-.right-button {
-  right: 0;
-  top: 0;
-}
-.img-1 {
-  background: url('images/1.JPG');
-}
-.img-2 {
-  background: url('images/2.JPG');
-}
-.img-3 {
-  background: url('images/3.JPG');
-}
+
 .slide {
   width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
+  max-width: 800px;
+  height: 350px;
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  z-index: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 18px;
+}
+
+.btn:active {
+  transform: scale(1.1);
+}
+
+.btn-prev {
+  top: 45%;
+  left: 2%;
+}
+
+.btn-next {
+  top: 45%;
+  right: 2%;
 }
