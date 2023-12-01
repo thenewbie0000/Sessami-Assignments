@@ -1,12 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Replace 'YOUR_USERNAME' with the GitHub username you want to display
   const username = 'prashantacharya';
   const apiUrl = `https://api.github.com/users/${username}`;
   const repoUrl = `https://api.github.com/users/${username}/repos`;
   
-
-
-  // Fetch user details
   fetch(apiUrl)
       .then(response => response.json())
       .then(userData => {
@@ -40,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>
               </div>
               <div class="social-links">
-                ${userData.twitter_username ? `<p><a href="https://twitter.com/${userData.twitter_username}" target="_blank"><i class="fab fa-twitter"></i></a></p>` : ''}
+                ${userData.twitter_username ? `<p><a href="https://twitter.com/${userData.twitter_username}" target="_blank"><img src="x-twitter.svg" style="width:20px;"></a></p>` : ''}
                 ${userData.blog ? 
                 (userData.blog.includes('www.linkedin.com') ? 
                     `<p><a href="${userData.blog}" target="_blank"><i class="fab fa-linkedin"></i></a></p>` : 
@@ -54,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(error => console.error('Error fetching user data:', error));
 
-  // Fetch user repositories
   fetch(repoUrl)
       .then(response => response.json())
       .then(reposData => {
