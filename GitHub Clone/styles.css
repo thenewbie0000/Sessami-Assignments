@@ -42,21 +42,35 @@ p{
   max-height: 80vh;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 18vw;
+  width: 17.5vw;
+}
+.profile-picture{
+  border-radius: 50%; 
+  width: 180px;
 }
 .user{
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  
 }
 .user h2{
   margin: 0;
   padding: 0;
 }
-.profile img{
+.octo-img{
   margin-right: 10px;
+  width:30px; 
+  height:30px; 
+  top:20px
+}
+.user-location{
+  width:25px; 
+  height:20px; 
+  margin:0;
+  font-family: 'Exo 2', sans-serif; 
+  vertical-align:middle;
+  font-weight:lighter;
 }
 .repositories{
   max-width: 55vw;
@@ -67,12 +81,14 @@ p{
   border: none;
   border-radius: 15px;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   background-color: #495155;
   text-align: left;
   width: 60vw;
 }
-
+.repo-card:hover, .profile:hover{
+  transform: scale(1.03);
+}
 .repo-card h4 {
   margin: 0;
 }
@@ -92,11 +108,12 @@ p{
 .repo-description{
   font-family: 'Exo 2', sans-serif;
   margin-bottom: 4px;
+  color:#fff
 }
 .profile .follow-stats {
   display: flex;
   justify-content: space-around;
-  margin: 15px auto;
+  margin: 25px auto;
   font-family: 'Exo 2', sans-serif;
 }
 
@@ -113,7 +130,48 @@ p{
   font-size: 0.8em;
   color: #fff;
 }
+.social-links{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.social-links i{
+  font-size: 20px;
+}
 .fork-stargazers{
   display: flex;
   flex-flow: row wrap;
+}
+
+@media screen and (max-width:956px) {
+  .container {
+    flex-flow: column wrap;
+    width: 100%;
+  }
+  .profile{
+    max-height: 100vh;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-bottom: 5vh;
+  }
+  .repositories{
+    max-width: 92%;
+    margin-left: -15px;
+    
+  }
+  .repo-card{
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word; 
+  }
+  h1{
+    font-size: 24px;
+  }
+  h2{
+    font-size: 18px;
+  }
+  p{
+    font-size: 12px;
+  }
 }
