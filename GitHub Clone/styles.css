@@ -1,5 +1,5 @@
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin: 0;
   margin-top: 5vh;
   padding: 0;
@@ -10,17 +10,17 @@ body {
   background-color: #27363d;
   color: #ffffff;
 }
-a{
+a {
   text-decoration: none;
   color: #fff;
 }
-h1{
+h1 {
   font-size: 32px;
 }
-h2{
+h2 {
   font-size: 24px;
 }
-p{
+p {
   padding: 0;
   margin: 0;
   font-size: 16px;
@@ -31,48 +31,79 @@ p{
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 20px;
+  margin-left: -50px;
+  margin-top: -4px;
 }
-
-.profile, .repositories {
+.profile,
+.repositories {
   background-color: #495155;
   padding: 20px;
   margin: 0 5px;
 }
-.profile{
-  max-height: 80vh;
+.profile {
+  max-height: 85vh;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 17.5vw;
 }
-.profile-picture{
-  border-radius: 50%; 
-  width: 180px;
+.profile-picture {
+  border-radius: 50%;
+  width: 80%;
 }
-.user{
+.user {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
 }
-.user h2{
+.user h2 {
   margin: 0;
   padding: 0;
 }
-.octo-img{
+.octo-img {
   margin-right: 10px;
-  width:30px; 
-  height:30px; 
-  top:20px
+  width: 30px;
+  height: 30px;
+  top: 20px;
 }
-.user-location{
-  width:25px; 
-  height:20px; 
-  margin:0;
-  font-family: 'Exo 2', sans-serif; 
-  vertical-align:middle;
-  font-weight:lighter;
+.user-location {
+  width: 25px;
+  height: 20px;
+  margin: 0;
+  font-family: "Exo 2", sans-serif;
+  vertical-align: middle;
+  font-weight: lighter;
 }
-.repositories{
+.profile .follow-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px auto;
+  font-family: "Exo 2", sans-serif;
+}
+.profile .follow-stats .stat {
+  text-align: center;
+}
+.profile .follow-stats .stat .count {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+.profile .follow-stats .stat .label {
+  font-size: 0.8em;
+  color: #fff;
+}
+.social-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.social-links i {
+  font-size: 20px;
+}
+.profile:hover {
+  transform: scale(1.03);
+}
+.repositories {
   max-width: 55vw;
   background-color: #27363d;
   margin-top: -20px;
@@ -81,97 +112,81 @@ p{
   border: none;
   border-radius: 15px;
   padding: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   background-color: #495155;
   text-align: left;
-  width: 60vw;
+  width: 58vw;
 }
-.repo-card:hover, .profile:hover{
+.repo-card:hover {
   transform: scale(1.03);
+  cursor: pointer;
 }
 .repo-card h4 {
   margin: 0;
 }
-
 .repo-card ul {
   list-style: none;
   padding: 0;
   margin: 10px 0 0 0;
 }
-
 .repo-card li {
   display: inline-block;
   margin-right: 10px;
   font-size: 0.8em;
   color: #666;
 }
-.repo-description{
-  font-family: 'Exo 2', sans-serif;
+.repo-description {
+  font-family: "Exo 2", sans-serif;
   margin-bottom: 4px;
-  color:#fff
-}
-.profile .follow-stats {
-  display: flex;
-  justify-content: space-around;
-  margin: 25px auto;
-  font-family: 'Exo 2', sans-serif;
-}
-
-.profile .follow-stats .stat {
-  text-align: center;
-}
-
-.profile .follow-stats .stat .count {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-.profile .follow-stats .stat .label {
-  font-size: 0.8em;
   color: #fff;
 }
-.social-links{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-.social-links i{
-  font-size: 20px;
-}
-.fork-stargazers{
+.fork-stargazers {
   display: flex;
   flex-flow: row wrap;
 }
 
-@media screen and (max-width:956px) {
+@media screen and (max-width: 900px) {
+  body {
+    margin-top: 5vh;
+  }
   .container {
     flex-flow: column wrap;
     width: 100%;
+    margin: -25px 0 0 20px;
+    justify-content: center;
   }
-  .profile{
+  .profile {
     max-height: 100vh;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
     margin-bottom: 5vh;
   }
-  .repositories{
+  .profile-picture {
+    width: 200px;
+  }
+  .repositories {
     max-width: 92%;
     margin-left: -15px;
-    
   }
-  .repo-card{
+  .repo-card {
     width: 100%;
     overflow: hidden;
-    word-wrap: break-word; 
+    word-wrap: break-word;
   }
-  h1{
+  h1 {
     font-size: 24px;
   }
-  h2{
+  h2 {
     font-size: 18px;
   }
-  p{
+  p {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    margin: -25px 0 0 -15px;
   }
 }
