@@ -49,6 +49,7 @@ p {
 .profile-picture {
   border-radius: 50%;
   width: 80%;
+  margin: 10px auto;
 }
 .user {
   display: flex;
