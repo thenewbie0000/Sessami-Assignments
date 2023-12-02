@@ -18,10 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 userData.avatar_url
               }" alt="Profile Picture" class="profile-picture">
               <div class="user">
-                <a href="${userData.html_url}" target="_blank">
-                  <img src="octo-logo.jpg" alt="GitHub Octocat Logo" class="octo-img" >
-                  <h2>${username}</h2>
-                </a>
+                  <img src="octo-logo.jpg" alt="GitHub Octocat Logo" class="octo-img" ><a href="${userData.html_url}" target="_blank"><h2>${username}</h2></a>
               </div>
               <p style="margin:10px; font-family: 'Exo 2', sans-serif;">${
                 userData.name
