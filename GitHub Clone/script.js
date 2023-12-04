@@ -2,6 +2,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const username = "prashantacharya";
   const apiUrl = `https://api.github.com/users/${username}`;
   const repoUrl = `https://api.github.com/users/${username}/repos`;
+  const modeToggle = document.getElementById('modeToggle');
+  const body = document.body;
+
+  modeToggle.addEventListener('change', () => {
+    if (modeToggle.checked) {
+      body.classList.add('light-mode');
+    } else {
+      body.classList.remove('light-mode');
+    }
+  });
+
 
   fetch(apiUrl)
     .then((response) => response.json())
@@ -18,7 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 userData.avatar_url
               }" alt="Profile Picture" class="profile-picture">
               <div class="user">
-                  <img src="octo-logo.jpg" alt="GitHub Octocat Logo" class="octo-img" ><a href="${userData.html_url}" target="_blank"><h2>${username}</h2></a>
+                <img src="octo-logo.jpg" alt="GitHub Octocat Logo" class="octo-img dark">
+                <img src="light-mode-octo.png" alt="GitHub Octocat Logo" class="octo-light">
+                <a href="${userData.html_url}" target="_blank"><h2>${username}</h2></a>               
               </div>
               <p style="margin:10px; font-family: 'Exo 2', sans-serif;">${
                 userData.name
@@ -26,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
               <div>
                 ${
                   userData.location
-                    ? `<img src = "location.png" class="user-location"> ${userData.location}`
+                    ? `<img src = "location.png" class="user-location">
+                       <img src = "light-location.png" class="user-location-light">
+                       ${userData.location}`
                     : ""
                 } 
               </div>
@@ -55,8 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${
                   userData.blog
                     ? userData.blog.includes("www.linkedin.com")
-                      ? `<p><a href="${userData.blog}" target="_blank"><i class="fab fa-linkedin"></i></a></p>`
-                      : `<p><a href="${userData.blog}" target="_blank"><i class="fas fa-globe"></i></a></p>`
+                      ? `<p><a href="${userData.blog}" target="_blank"><i class="fab fa-linkedin linkedin-dark"></i>
+                      <i class="fab fa-linkedin linkedin-light" style="color: #0077B5;"></i></a></p>`
+                      : `<p><a href="${userData.blog}" target="_blank"><i class="fas fa-globe light-globe"></i><i class="fas fa-globe dark-globe" style="color:black;"></i></a></p>`
                     : ""
                 }
                 
@@ -89,14 +105,17 @@ document.addEventListener("DOMContentLoaded", function () {
                   <p class="repo-description"><b style="font-family:'Oswald', sans-serif;">Made With:</b> ${
                     repo.language || "N/A"
                   }</p>
-                  <ul">
-                    <li style="color:#fff; font-size:16px;">
-                    <i class="fas fa-code-branch" style="vertical-align: middle; transform: rotate(-10deg);"></i> ${
-                      repo.forks_count
-                    }</li>
-                    <li style="color:#fff; font-size:16px;"><i class="material-icons" style="vertical-align: middle;">star</i> ${
-                      repo.stargazers_count
-                    }</li>
+                  <ul>
+                    <li class="fork-count">
+                      <i class="fas fa-code-branch star-icon" style="vertical-align: middle; transform: rotate(-10deg); color:white; font-size:18px;"></i> 
+                      <i class="fas fa-code-branch heart-icon" style="vertical-align: middle; transform: rotate(-10deg);color: black; font-size:18px;"></i>
+                      <span class="count">${repo.forks_count}</span>
+                    </li>
+                    <li class="stargazers-count">
+                      <i class="material-icons star-icon" style="vertical-align: middle;">star</i>
+                      <i class="fas fa-star heart-icon" style="vertical-align: middle;color: black;font-size:18px;"></i>
+                      <span class="count">${repo.stargazers_count}</span>
+                    </li>
                       
                   </ul>
                 </a>
