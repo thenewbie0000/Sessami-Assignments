@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const username = "prashantacharya";
+  const username = "thenewbie0000";
   const apiUrl = `https://api.github.com/users/${username}`;
   const repoUrl = `https://api.github.com/users/${username}/repos`;
   const modeToggle = document.getElementById('modeToggle');
