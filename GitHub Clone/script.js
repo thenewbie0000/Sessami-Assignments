@@ -18,10 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => response.json())
     .then((userData) => {
       const profile = document.getElementById("profile");
-      console.log("Website:", userData.blog);
-      console.log("Email:", userData.email);
-      console.log("LinkedIn:", userData.linkedin);
-      console.log("X:", userData.twitter_username);
 
       profile.innerHTML = `
             <div>
