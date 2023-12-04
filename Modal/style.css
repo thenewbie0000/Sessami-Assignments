@@ -53,11 +53,22 @@
     transform: translateY(0);
   }
 }
+@keyframes slideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+.modal.slide-out {
+  animation: slideOut 0.5s;
 }
 .para{
   padding-top: 8px;
