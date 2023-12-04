@@ -1,25 +1,42 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   const username = "thenewbie0000";
   const apiUrl = `https://api.github.com/users/${username}`;
   const repoUrl = `https://api.github.com/users/${username}/repos`;
   const modeToggle = document.getElementById('modeToggle');
   const body = document.body;
 
+  function updateMode() {
+    const isLightMode = localStorage.getItem('isLightMode') === 'true';
+    if (isLightMode) {
+      body.classList.add('light-mode');
+      modeToggle.checked = true;
+    } else {
+      body.classList.remove('light-mode');
+      modeToggle.checked = false;
+    }
+  }
+
   modeToggle.addEventListener('change', () => {
     if (modeToggle.checked) {
       body.classList.add('light-mode');
+      localStorage.setItem('isLightMode', 'true');
     } else {
       body.classList.remove('light-mode');
+      localStorage.setItem('isLightMode', 'false');
     }
   });
 
 
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((userData) => {
-      const profile = document.getElementById("profile");
 
-      profile.innerHTML = `
+  try {
+    const responseUser = await fetch(apiUrl);
+    const userData = await responseUser.json();
+
+    const responseRepos = await fetch(repoUrl);
+    const reposData = await responseRepos.json();
+    const profile = document.getElementById("profile");
+
+    profile.innerHTML = `
             <div>
               <img src="${
                 userData.avatar_url
@@ -79,17 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               </div>
             </div>
-          `;
-    })
-    .catch((error) => console.error("Error fetching user data:", error));
+    `;
 
-  fetch(repoUrl)
-    .then((response) => response.json())
-    .then((reposData) => {
-      const repositories = document.getElementById("repositories");
-      const repoList = document.createElement("div");
-      repoList.innerHTML =
-        '<h1 style="text-align:left; margin: 0 0 15px 0;">Repositories</h1>';
+    const repositories = document.getElementById("repositories");
+    const repoList = document.createElement("div");
+    repoList.innerHTML =
+      '<h1 style="text-align:left; margin: 0 0 15px 0;">Repositories</h1>';
 
       reposData.forEach((repo) => {
         const repoCard = document.createElement("div");
@@ -120,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       repositories.appendChild(repoList);
-    })
-    .catch((error) => console.error("Error fetching repository data:", error));
+      updateMode();
+    }
+    catch(error){console.error("Error fetching repository data:", error);}
 });
