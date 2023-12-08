@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', async function () {
   const itemsPerPage = 20;
   let currentPage = 1;
   let clickedStoryId;
+  let preLoader = document.getElementById('loader-container');
+
+  function loadingFunction() {
+    preLoader.style.display = 'none';
+  }
 
   async function fetchAndRenderStories(page) {
     const startIndex = (page - 1) * itemsPerPage;
@@ -36,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async function () {
           </div>
           <div class="news-details">
             <span class="detail"><i class="far fa-star" data-story-id="${story.id}"></i> ${story.score}</span>
-            <span class="detail comment"><i class="far fa-comments"></i> ${story.descendants}</span>
+            <span class="detail comment"><i class="far fa-comments" data-story-id="${story.id}"> ${story.descendants}</i></span>
             <span class="detail"><i class="far fa-user"></i> ${story.by}</span>
           </div>
       `;
@@ -45,13 +50,14 @@ document.addEventListener('DOMContentLoaded', async function () {
 
       renderPaginationButtons(data.length);
 
-      const starIcons = document.querySelectorAll('.news-details i.fa-star');
-      starIcons.forEach((starIcon) => {
-        starIcon.addEventListener('click', () => {
-          clickedStoryId = starIcon.getAttribute('data-story-id');
+      const commentIcons = document.querySelectorAll('.news-details i.fa-comments');
+      commentIcons.forEach((commentIcon) => {
+        commentIcon.addEventListener('click', () => {
+          clickedStoryId = commentIcon.getAttribute('data-story-id');
           openCommentsPage(clickedStoryId);
         });
       });
+      loadingFunction();
     } catch (error) {
       console.error('Error fetching and rendering stories:', error);
     }
@@ -61,12 +67,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   function openCommentsPage(storyId) {
     console.log('Selected Story ID:', storyId);
-    //window.location.href = 'comments.html';
-  }
-
-  function openHackerNewsDiscussion(storyId) {
-    // Open the Hacker News discussion URL for the specified story
-    window.open(`https://news.ycombinator.com/item?id=${storyId}`, '_blank');
+    window.location.href = `comments.html?storyId=${storyId}`;
   }
 
   function renderPaginationButtons(totalStories) {
@@ -100,3 +101,5 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 
 // use export statement to export value of story id
+
+//href="story.html?storyId=38567687"
