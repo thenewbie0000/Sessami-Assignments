@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function () {
-  const headerTitle = document.querySelector('.header h1');
+  const headerTitle = document.querySelector('.headerv h1');
   headerTitle.addEventListener('click', function () {
-    window.location.href = 'index.html';
-  });
+      window.location.href = 'index.html';
+    }
+  );
 
   const storyId = new URLSearchParams(window.location.search).get('storyId');
   console.log(storyId);
@@ -18,19 +19,29 @@ document.addEventListener("DOMContentLoaded", async function () {
       return;
     }
 
-    const comments = await fetchComments(story.kids);
+    const comments = story.kids ? story.kids.slice(0, 10) : [];
 
     commentsContainer.innerHTML = `
       <div class="comments-wrapper">
-        <h3>${story.title}</h3>
+        <h3><a class="news-url" href="${story.url}" target="_blank">${story.title}</a></h3>
         <div class="news-details">
           <span class="detail"><i class="far fa-star"></i> ${story.score}</span>
           <span class="detail comment"><i class="far fa-comments"> ${story.descendants}</i></span>
           <span class="detail"><i class="far fa-user"></i> ${story.by}</span>
-      </div>
-        <ul>${comments.map((comment, index) => renderComment(comment, 0, index + 1)).join("")}</ul>
+        </div>
+        <ul id="commentList">${comments.map((comment, index) => renderComment(comment, 0, index + 1)).join("")}</ul>
+        <button id="loadMoreComments">Load More Comments</button>
       </div>
     `;
+    const loadMoreButton = document.getElementById("loadMoreComments");
+    let currentPage = 1;
+
+    loadMoreButton.addEventListener("click", async function () {
+      currentPage++;
+      const additionalComments = await fetchComments(story.kids.slice((currentPage - 1) * 10, currentPage * 10));
+      const commentList = document.getElementById("commentList");
+      commentList.innerHTML += additionalComments.map((comment, index) => renderComment(comment, 0, index + 1)).join("");
+    });
     
     loadingFunction();
   } catch (error) {

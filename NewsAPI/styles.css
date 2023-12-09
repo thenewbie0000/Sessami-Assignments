@@ -6,6 +6,19 @@ body {
   padding-top: 12vh;
   font-family: 'Sora', sans-serif;
 }
+button{
+  padding: 7px 15px;
+  margin: 10px 20px;
+  border: none;
+  background-color: #B6C4D3;
+  border-radius: 10px;
+}
+button:hover{
+  cursor: pointer;
+}
+button:active{
+  opacity: 0.8;
+}
 #loader-container {
   position: fixed;
   top: 0;
@@ -50,6 +63,8 @@ body {
   color: white;
   width: 100%;
   cursor: pointer;
+  display: inline;
+  align-self: center;
 }
 #news-list{
   display: flex;
@@ -68,6 +83,7 @@ body {
   max-height: 20vh;
   line-height: 1.8;
   background-color: #B6C4D3;
+  cursor: default;
 }
 
 .news-title {
@@ -106,9 +122,13 @@ body {
 #commentsContainer .comments-wrapper {
   max-width: 100%;
   overflow-x: auto;
+  background-color: #c1d8f0;
+}
+#commentsContainer .comments-wrapper h3{
+  color: #4663ac;
 }
 #commentsContainer .comment-box {
-  border: 1px solid #ccc;
+  border: none;
   padding: 15px 20px;
   margin: 5px 0;
   border-radius: 10px;

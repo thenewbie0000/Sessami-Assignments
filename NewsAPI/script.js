@@ -41,7 +41,9 @@ document.addEventListener('DOMContentLoaded', async function () {
           </div>
           <div class="news-details">
             <span class="detail"><i class="far fa-star" data-story-id="${story.id}"></i> ${story.score}</span>
-            <span class="detail comment"><i class="far fa-comments" data-story-id="${story.id}"> ${story.descendants}</i></span>
+            <span class="detail comment">
+              ${story.descendants > 0 ? `<i class="far fa-comments" data-story-id="${story.id}">${story.descendants}</i>` : ''}
+            </span>
             <span class="detail"><i class="far fa-user"></i> ${story.by}</span>
           </div>
       `;
@@ -95,11 +97,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   function changePage(newPage) {
     currentPage = newPage;
     fetchAndRenderStories(currentPage);
+    window.scrollTo(0, 0);
   }
 
   await fetchAndRenderStories(currentPage);
 });
-
-// use export statement to export value of story id
-
-//href="story.html?storyId=38567687"
