@@ -149,12 +149,14 @@ button:active{
   margin: 5px 0;
   border-radius: 10px;
   background-color: #c1d8f0;
+  flex-wrap: wrap;
 }
 #commentsContainer .comment-box a {
   text-decoration: none;
   cursor: pointer;
   color: #0f5685;
   flex-wrap: wrap;
+  word-wrap: break-word;
 }
 .comment-wrapper {
   border-left: 2px solid #385b81;
