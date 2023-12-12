@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
   const newsList = document.getElementById('news-list');
-  const apiUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty&limit=500';
+  const apiUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json?limit=500';
   const itemUrl = 'https://hacker-news.firebaseio.com/v0/item/';
   const itemsPerPage = 25;
   let currentPage = 1;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
       const responses = await Promise.all(
         pageStoryIds.map((storyId) =>
-          fetch(`${itemUrl}${storyId}.json?print=pretty`)
+          fetch(`${itemUrl}${storyId}.json`)
         )
       );
       const stories = await Promise.all(

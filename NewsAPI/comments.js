@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const storyId = new URLSearchParams(window.location.search).get('storyId');
   const commentsContainer = document.getElementById("commentsContainer");
-  const apiUrl = `https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`;
+  const apiUrl = `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`;
 
   try {
     const response = await fetch(apiUrl);
@@ -47,7 +47,7 @@ function loadingOff() {
 async function fetchComments(commentIds) {
   const commentPromises = commentIds.map((commentId) =>
     fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${commentId}.json?print=pretty`
+      `https://hacker-news.firebaseio.com/v0/item/${commentId}.json`
     ).then((response) => response.json())
   );
 
