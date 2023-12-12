@@ -1,13 +1,24 @@
 document.addEventListener('DOMContentLoaded', async function () {
   const newsList = document.getElementById('news-list');
-  const apiUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty';
+  const apiUrl = 'https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty&limit=500';
   const itemUrl = 'https://hacker-news.firebaseio.com/v0/item/';
-  const itemsPerPage = 20;
+  const itemsPerPage = 25;
   let currentPage = 1;
   let clickedStoryId;
   let preLoader = document.getElementById('loader-container');
+  const searchInput = document.getElementById('searchInput');
+  const headerTitle = document.querySelector('.header h1 span');
 
-  function loadingFunction() {
+  headerTitle.addEventListener('click', function () {
+    window.location.href = 'index.html';
+  });
+
+  searchInput.addEventListener('input', function () {
+    const searchTerm = searchInput.value.toLowerCase();
+    filterStoriesBySearchTerm(searchTerm);
+  });
+
+  function loadingOff() {
     preLoader.style.display = 'none';
   }
 
@@ -29,11 +40,11 @@ document.addEventListener('DOMContentLoaded', async function () {
       const stories = await Promise.all(
         responses.map((response) => response.json())
       );
-
       newsList.innerHTML = '';
 
       stories.forEach((story) => {
         const newsItem = document.createElement('div');
+        const commentsHTML = story.descendants > 0 ? `<span class="detail comment"><i class="far fa-comments" data-story-id="${story.id}"> ${story.descendants}</i></span>` : '';
         newsItem.classList.add('news-item');
         newsItem.innerHTML = `
           <div class="news-title" data-story-id="${story.id}">
@@ -41,9 +52,7 @@ document.addEventListener('DOMContentLoaded', async function () {
           </div>
           <div class="news-details">
             <span class="detail"><i class="far fa-star" data-story-id="${story.id}"></i> ${story.score}</span>
-            <span class="detail comment">
-              ${story.descendants > 0 ? `<i class="far fa-comments" data-story-id="${story.id}">${story.descendants}</i>` : ''}
-            </span>
+            ${commentsHTML}
             <span class="detail"><i class="far fa-user"></i> ${story.by}</span>
           </div>
       `;
@@ -59,16 +68,28 @@ document.addEventListener('DOMContentLoaded', async function () {
           openCommentsPage(clickedStoryId);
         });
       });
-      loadingFunction();
+      loadingOff();
+
+      window.scrollTo(0, 0);
     } catch (error) {
       console.error('Error fetching and rendering stories:', error);
     }
   }
 
-  
+  function filterStoriesBySearchTerm(searchTerm) {
+    const newsItems = document.querySelectorAll('.news-item');
+    
+    newsItems.forEach((newsItem) => {
+      const title = newsItem.querySelector('.news-title a').textContent.toLowerCase();
+      if (title.includes(searchTerm)) {
+        newsItem.style.display = 'block';
+      } else {
+        newsItem.style.display = 'none';
+      }
+    });
+  }
 
   function openCommentsPage(storyId) {
-    console.log('Selected Story ID:', storyId);
     window.location.href = `comments.html?storyId=${storyId}`;
   }
 
@@ -81,23 +102,32 @@ document.addEventListener('DOMContentLoaded', async function () {
     const backButton = document.createElement('button');
     backButton.textContent = 'Back';
     backButton.disabled = currentPage === 1;
-    backButton.addEventListener('click', () => changePage(currentPage - 1));
+    backButton.style.cursor = currentPage === 1 ? 'not-allowed' : 'pointer';
+    backButton.style.opacity = currentPage === 1 ? '1' : '0.8';
+    backButton.addEventListener('click', () => {
+      loadingFunction();
+      changePage(currentPage - 1);
+    });
 
     const nextButton = document.createElement('button');
     nextButton.textContent = 'Next';
     nextButton.disabled = currentPage === totalPages;
-    nextButton.addEventListener('click', () => changePage(currentPage + 1));
+    nextButton.addEventListener('click', () => {
+      loadingFunction();
+      changePage(currentPage + 1);
+    });
 
     paginationContainer.appendChild(backButton);
     paginationContainer.appendChild(nextButton);
 
-    newsList.appendChild(paginationContainer);
+    newsList.appendChild(paginationContainer);    
   }
-
+  function loadingFunction(){
+    preLoader.style.display = 'flex';
+  }
   function changePage(newPage) {
     currentPage = newPage;
     fetchAndRenderStories(currentPage);
-    window.scrollTo(0, 0);
   }
 
   await fetchAndRenderStories(currentPage);
