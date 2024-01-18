@@ -1,0 +1,22 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+
+header{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  vertical-align: middle;
+  position: fixed;
+  height: 72.21px;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+}
+.logo{
+  width: 5%;
+}
+
