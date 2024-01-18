@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+  <div class="countdown-timer">
+    <span class="timer-part timer-part-min">
+      <input type="number" id="min" max="59" min="0" value="00" oninput="validateInput(this)">
+    </span>
+    <span class="timer-part">:</span>
+    <span class="timer-part timer-part-sec">
+      <input type="number" id="sec" max="59" min="0" value="00" oninput="validateInput(this)">
+    </span>
+    <button class="timer-button play start" id = "start">
+      <span class="material-icons">
+        play_arrow
+      </span>
+    </button>
+    <button class="timer-button reset" id="reset" title="Reset">
+      <span class="material-icons">
+        timer
+      </span>
+    </button>
+  </div>
+</body>
+
+<script src="script.js"></script>
+</html>
