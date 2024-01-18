@@ -1,0 +1,89 @@
+body {
+  background-color: #eec0c6;
+  background-image: linear-gradient(315deg, #eec0c6 0%, #e58c8a 74%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  font-family: 'Figtree', sans-serif;
+  color: #03031c;
+  height: 100%;
+}
+h1 {
+  font-weight: 800;
+  display: inline;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+h3, h4{
+  padding:30px 50px;
+  display:inline;
+}
+a{
+  text-decoration: none;
+}
+sup{
+  vertical-align:text-top;
+  padding-left: 0px;
+}
+table tr:nth-child(even) {
+  background-color: white;
+  color: rgb(20,15,10);
+}
+table tr:nth-child(odd):not(:first-child) {
+  color: white;
+}
+th, td{
+  padding: 5px 100px;
+}.title-container{
+  padding-bottom: 15px;
+}
+.container {
+  align-items: center;
+  padding-top: 20px;
+}
+.logo{
+  height: 50px;
+  width: 50px;
+  border-radius: 8px;
+  vertical-align: bottom;
+}
+.link{
+  padding-right: 15px;
+}
+.link:visited, .link:link{  
+  color: black;
+}
+.table {
+  font-weight: 400;
+}
+.table h3{
+  padding: 0;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.button {
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 5px 2px;
+}
+.button:active{
+  animation-duration: 3s;
+  animation-name: shake;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
