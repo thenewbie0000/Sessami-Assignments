@@ -1,0 +1,287 @@
+body {
+  font-family: "Oswald", sans-serif;
+  margin: 0;
+  margin-top: 5vh;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #27363d;
+  color: #ffffff;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+h1{
+  font-size: 32px;
+}
+h2{
+  font-size: 24px;
+}
+p{
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+.container {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 20px;
+  margin-left: -50px;
+  margin-top: -4px;
+}
+.switch {
+  width: 60px;
+  height: 34px;
+  top:10px;
+  right: 10px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+}
+#moonIcon,
+#sunIcon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+
+#moonIcon {
+  left: 8px;
+  color: black;
+}
+
+#sunIcon {
+  right: 8px;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.profile,
+.repositories {
+  background-color: #495155;
+  padding: 20px;
+  margin: 0 5px;
+}
+.profile {
+  max-height: 85vh;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 17.5vw;
+}
+.profile-picture {
+  border-radius: 50%;
+  width: 80%;
+  margin: 10px auto;
+}
+.user {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+.user h2 {
+  margin: 0;
+  padding: 0;
+}
+.octo-img {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  top: 20px;
+}
+.profile .user .octo-light{
+  width: 50px;
+  height: 50px;
+  margin-left: -15px;
+}
+.user-location {
+  width: 25px;
+  height: 20px;
+  margin: 0;
+  font-family: "Exo 2", sans-serif;
+  vertical-align: middle;
+  font-weight: lighter;
+}
+.user-location-light{
+  width: 25px;
+  height: 30px;
+  vertical-align: middle;
+
+}
+.profile .follow-stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px auto;
+  font-family: "Exo 2", sans-serif;
+}
+.profile .follow-stats .stat {
+  text-align: center;
+}
+.profile .follow-stats .stat .count {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+.profile .follow-stats .stat .label {
+  font-size: 0.8em;
+  color: #fff;
+}
+.social-links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.social-links i {
+  font-size: 20px;
+}
+.profile:hover {
+  transform: scale(1.03);
+}
+.repositories {
+  max-width: 55vw;
+  background-color: #27363d;
+  margin-top: -20px;
+}
+.repo-card {
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 40px;
+  background-color: #495155;
+  text-align: left;
+  width: 58vw;
+}
+.repo-card:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+.repo-card h4 {
+  margin: 0;
+}
+.repo-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+.repo-card li {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 0.8em;
+  color: #666;
+}
+.repo-description {
+  font-family: "Exo 2", sans-serif;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.fork-count .count{
+  color:#fff; 
+  font-size:16px;
+}
+.stargazers-count{
+  color:white; 
+  font-size:24px;
+}
+.stargazers-count i{
+  color: white;
+}
+.stargazers-count .count,
+.fork-count .count {
+  color: #fff;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    margin-top: 5vh;
+  }
+  .container {
+    flex-flow: column wrap;
+    width: 100%;
+    margin: -10px 0 0 20px;
+    justify-content: center;
+  }
+  .profile {
+    max-height: 100vh;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin-bottom: 5vh;
+  }
+  .profile-picture {
+    width: 200px;
+  }
+  .repositories {
+    max-width: 92%;
+    margin-left: -15px;
+  }
+  .repo-card {
+    width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container{
+    margin: -10px 0 0 -15px;
+  }
+}

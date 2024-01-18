@@ -1,0 +1,68 @@
+
+body.light-mode{
+  background-color: #F7EFE5;
+  color: #000000;
+}
+body.light-mode .profile, 
+body.light-mode .repositories .repo-card  {
+  background-color: lightgray;
+}
+body.light-mode .profile .follow-stats .stat .label, 
+body.light-mode h2,
+body.light-mode .repositories .repo-description,
+body.light-mode .repositories .repo-card ul li{ 
+  color: #000000;
+}
+body.light-mode #repositories{
+  background-color: #F7EFE5;
+}
+body.light-mode .stargazers-count .count,
+body.light-mode .fork-count .count {
+  color: #000000;
+}
+.stargazers-count .heart-icon,
+.fork-count .heart-icon,
+.profile .social-links .dark-globe, 
+.profile .social-links .linkedin-light,
+.profile .octo-light,
+.profile .user-location-light{
+  display: none;
+}
+body.light-mode .stargazers-count .star-icon,
+body.light-mode .fork-count .star-icon,
+body.light-mode .profile .social-links .linkedin-dark,
+body.light-mode .profile .social-links .light-globe,
+body.light-mode .profile .dark,
+body.light-mode .profile .user-location {
+  display: none;
+}
+
+body.light-mode .stargazers-count .heart-icon,
+body.light-mode .fork-count .heart-icon,
+body.light-mode .profile .social-links .dark-globe,
+body.light-mode .profile .social-links .linkedin-light,
+body.light-mode .profile .octo-light,
+body.light-mode .profile .user-location-light  {
+  display: inline-block;
+  color: black;
+}
+body.light-mode .profile .user{
+  margin-top: -5px
+}
+body.light-mode .profile h1 {
+  font-size: 32px;
+}
+body.light-mode .profile h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+body.light-mode .profile p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+body.light-mode .profile .follow-stats .stat .label,
+body.light-mode .profile p{
+  font-weight: 600;
+}
