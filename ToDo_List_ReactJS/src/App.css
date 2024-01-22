@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+.container {
+  width: 80%;
+  max-width: 580px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color: #FBCEB1;
+  min-height: 70vh;
+}
+
+.app-title {
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  display: block;
+  text-align: center;
+}
+
+.form-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 20px;
+  justify-content: space-around;
+}
+.form-input {
+  width: 78%;
+  height: 40px;
+  border: 0;
+  outline: 0;
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #3d3d3d;
+  border-radius: 15px;
+}
+.form-button {
+  height: 40px;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #17B169;
+  padding: 10px 15px;
+}
+.form-button:hover{
+  transform: scale(1.1);
+}
+.form-button:active{
+  opacity: 0.6;
+}
+
+.todo-list{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  justify-content: space-around;
+}
+.todo-item {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #e9e9e9;
+  font-weight:600;
+  border-radius: 10px;
+  width: 80%;
+}
+.todo-item.completed label {
+  text-decoration: line-through;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+
+.todo-item label {
+  margin-right: 5px;
+  width: 90%;
+}
+
+.todo-item svg {
+  max-width: 20px;
+  max-height: 20px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 5px 16px;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  background-color:#AA0000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@media screen and (max-width:480px) {
+  .form-input-container {
+    width: 100%;
+    gap: 10px;
+    flex-flow: row wrap;
+  }
+}
+
+@media  screen and (max-width:380px) {
+  .form-input{
+    width: 100%;
+  }
+}
+@media  screen and (max-width:365px) {
+  .todo-item {
+    max-width: 80%; /* Adjust the value as needed */
+    word-wrap: break-word; /* Enable word wrapping for long words */
+  }
+}
